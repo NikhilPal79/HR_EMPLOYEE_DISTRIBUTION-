@@ -32,7 +32,7 @@ ALTER TABLE hr
 MODIFY COLUMN hire_date DATE;
 
 UPDATE hr
-SET termdate = if(termdate IS NOT NULL !='', date(str_to_date(termdate, '%Y-%m-%d %H:%i:%s UTC'),'0000-00-00')
+SET termdate = if(termdate IS NOT NULL !='', date(str_to_date(termdate, '%Y-%m-%d %H:%i:%s UTC')),'0000-00-00')
 WHERE TRUE;
 
 SELECT termdate from hr;
